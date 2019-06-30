@@ -4,6 +4,7 @@ import SocialService from '../services/social.service'
 import StockService from '../services/stock.service'
 
 const router = express.Router() // eslint-disable-line new-cap
+const social = new SocialService()
 router
     .get('/public*', (req, res, next) => {
         if (req.cookies.user) {
@@ -22,7 +23,11 @@ router
             ? res.redirect('/login')
             : next()
     })
-    .use('/bank', BankRoute)
-    .use('/aisp', aispRoute)
+    .get('/social/topposts', (req, res) => {
+        if(req.query.qty) {
+            console.log(social.getTopPosts(req.query.qty))
+            res.send(social.getTopPosts(req.query.qty))
+        }
+    })
 
 export default router

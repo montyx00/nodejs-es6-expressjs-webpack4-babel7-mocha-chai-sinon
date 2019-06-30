@@ -1,7 +1,11 @@
-export default ServiceConfigs = {
+let ServiceConfigs = {
     social: {
-        facebook: {},
+        facebook: {
+            topPostMax: 10
+        },
         twitter: {}
     },
     stock: {}
 }
+
+export default ServiceConfigs

@@ -1,10 +1,6 @@
 import path from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
-import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import autoprefixer from 'autoprefixer'
 
 export default {
     entry: path.join(__dirname, 'src/app.js'),
