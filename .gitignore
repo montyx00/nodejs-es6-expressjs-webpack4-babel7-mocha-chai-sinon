@@ -89,3 +89,6 @@ typings/
 
 #build folder
 instrumented-src
+
+#vscode
+.vscode/
