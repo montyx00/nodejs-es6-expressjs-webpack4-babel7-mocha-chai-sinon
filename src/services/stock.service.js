@@ -5,6 +5,10 @@ class StockService {
     constructor() {
         this.stockService = ServiceConfigs.StockService
     }
+
+    stockPriceGenerator(symbol, date) {
+        return Math.floor(Math.random() * 50001)
+    }
 }
 
 export default StockService

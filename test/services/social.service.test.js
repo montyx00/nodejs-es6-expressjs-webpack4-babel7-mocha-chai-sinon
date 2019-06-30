@@ -18,9 +18,9 @@ describe('Get top posts', () => {
     })
 })
 
-describe('Get posts count', () => {
+describe('socialMediaCountGenerator', () => {
     it('should return a random number between 0-200', () => {
-        let count = social.getPostCount('LOGM')
+        let count = social.socialMediaCountGenerator('LOGM', 'facebook')
         expect(count).to.be.gte(0)
         expect(count).to.be.lte(200)
     })
