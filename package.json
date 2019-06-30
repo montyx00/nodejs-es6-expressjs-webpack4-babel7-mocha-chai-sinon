@@ -9,12 +9,14 @@
     "test": "mocha --require @babel/register ./test/**/*.test.js",
     "watch": "mocha --compilers js:babel-register -w ./test/**/*.test.js",
     "test:coverage": "NODE_ENV=nyc babel src --out-dir instrumented-src && nyc --reporter=text-summary --reporter=lcov npm run test",
-    "dev": "nodemon app/app.js --exec \"node -r @babel/register\""
+    "dev": "nodemon src/app.js --exec \"node -r @babel/register\""
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@babel/polyfill": "^7.4.4"
+    "@babel/polyfill": "^7.4.4",
+    "lorem-ipsum": "^2.0.3",
+    "lorem-ipsum-generator": "^1.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -34,7 +36,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.18.0",
     "eslint-watch": "^5.1.2",
-    "express":"^4.17.1",
+    "express": "^4.17.1",
     "file-loader": "^4.0.0",
     "lodash": "^4.17.11",
     "mocha": "^6.1.4",
