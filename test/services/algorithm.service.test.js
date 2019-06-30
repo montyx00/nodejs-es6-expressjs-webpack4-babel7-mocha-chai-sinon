@@ -20,9 +20,15 @@ const ALL_ALGORITHMS = [
     }
 ]
 
+const RECOMMENDATIONS = [
+    'buy',
+    'hold',
+    'sell'
+]
+
 const ERROR_ALG_OBJECT = {
-    errorMsg: "The requested algorithm is not exist",
-    errorCode: "111"
+    code: "111",
+    message: "The requested algorithm is not exist"
 }
 
 beforeEach(() => {
@@ -33,11 +39,11 @@ describe('Algorithm Service', () => {
     describe('get', () => {
         it('should give back an object with the algorithm properties in case of change', () => {
             let algorithmProps = algorithm.get('algorithm01')
-            expect(algorithmProps).to.be.equal(ALL_ALGORITHMS(0))
+            expect(algorithmProps).to.be.deep.equal(ALL_ALGORITHMS[0])
         })
         it('should give back error object in case of missing algorithm ID', () => {
             let algorithmProps = algorithm.get('algorithm04')
-            expect(algorithmProps).to.be.equal(ERROR_ALG_OBJECT)
+            expect(algorithmProps).to.be.deep.equal(ERROR_ALG_OBJECT)
         })
     })
 
@@ -49,14 +55,9 @@ describe('Algorithm Service', () => {
     })
 
     describe('recommendationAlgorithm', () => {
-        it('should return an integer between 0-50000', () => {
-            let price = algorithm.recommendationAlgorithm(12171, 136)
-            // Integer check
-            expect(price).to.be.a('number')
-            expect(price % 1).to.equal(0)
-
-            expect(price).to.be.gte(0)
-            expect(price).to.be.lte(50000)
+        it('should give back buy/hold/sell', () => {
+            let recommendation = algorithm.recommendationAlgorithm(12171, 136)
+            expect(RECOMMENDATIONS).includes(recommendation)
         })
     })
 })

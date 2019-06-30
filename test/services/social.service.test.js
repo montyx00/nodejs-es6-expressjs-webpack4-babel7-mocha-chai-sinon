@@ -17,6 +17,10 @@ describe('Social Service', () => {
             expect(posts[0].author).is.string
             expect(posts[0].content).is.string
         })
+        it('should return 2 posts when 2 posts were requested', () => {
+            let posts = social.getLoremTopPosts(2)
+            expect(posts).to.have.lengthOf(2)
+        })
     })
 
     describe('socialMediaCountGenerator', () => {
