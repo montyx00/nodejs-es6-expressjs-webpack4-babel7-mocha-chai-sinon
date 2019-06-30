@@ -9,7 +9,11 @@ export default class SocialService {
         this.getLoremTopPosts = this.lorem.getPost
     }
 
-    getTopPosts (qty) {
+    getTopPosts(qty) {
         return this.getLoremTopPosts(qty)
+    }
+
+    socialMediaCountGenerator(symbol, media) {
+        return Math.floor(Math.random() * 201)
     }
 }
