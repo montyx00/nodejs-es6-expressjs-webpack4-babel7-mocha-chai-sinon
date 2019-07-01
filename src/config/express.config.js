@@ -5,6 +5,7 @@ import routes from '../routes/index.route'
 
 const app = express()
 
+app.use(cors())
 app.set('layout extractScripts', true)
 app.set('layout extractStyles', true)
 

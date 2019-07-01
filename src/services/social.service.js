@@ -1,6 +1,6 @@
 import ServiceConfigs from '../config/services.config'
 import LoremIpsumGenerator from '../config/loremIpsum.config'
-import _ from 'lodash'
+import SocialModel from '../models/social.model'
 
 export default class SocialService {
     constructor() {
@@ -15,5 +15,9 @@ export default class SocialService {
 
     socialMediaCountGenerator(symbol, media) {
         return Math.floor(Math.random() * 201)
+    }
+
+    getAll() {
+        return SocialModel.medias
     }
 }
