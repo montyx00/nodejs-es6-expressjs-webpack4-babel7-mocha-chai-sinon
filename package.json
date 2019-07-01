@@ -16,7 +16,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "lorem-ipsum": "^2.0.3",
-    "lorem-ipsum-generator": "^1.0.4"
+    "lorem-ipsum-generator": "^1.0.4",
+    "net": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

@@ -1,5 +1,5 @@
 import ServiceConfigs from '../config/services.config'
-import _ from 'lodash'
+import StockModel from '../models/stock.model'
 
 class StockService {
     constructor() {
@@ -8,6 +8,10 @@ class StockService {
 
     stockPriceGenerator(symbol, date) {
         return Math.floor(Math.random() * 50001)
+    }
+
+    getAllSymbols() {
+        return StockModel.symbols
     }
 }
 
