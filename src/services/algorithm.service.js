@@ -1,6 +1,7 @@
 import model from '../models/algorithm.model'
 import errors from '../models/errors.model'
 import _ from 'lodash'
+import moment from 'moment'
 
 export default class AlgorithmService {
     constructor(){
@@ -19,8 +20,24 @@ export default class AlgorithmService {
         return model.all
     }
 
-    recommendationAlgorithm(price, media) {
-        let rnd = Math.floor(Math.random() * 3)
-        return model.recommendations[rnd]
+    
+
+    getPostCountsForDays(media, days, algorithm) {
+        let range = []
+        for(let i = 0; i < days; ++i) {
+            let count = Math.floor(Math.random() * 1000)
+            let price = Math.floor(Math.random() * 50000)
+            let date = moment().add(0-i, 'day')
+            let recommendation = model.recommendationAlgorithm(count, price, this.get(algorithm))
+
+            let day = {
+                count: count,
+                price: price,
+                date: date,
+                recommendation: recommendation
+            }
+            range.push(day)
+        }
+        return range
     }
 }
