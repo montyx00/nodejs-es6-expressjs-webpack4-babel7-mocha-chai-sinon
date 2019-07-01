@@ -1,5 +1,5 @@
 import ServiceConfigs from '../config/services.config'
-import StockModel from '../models/stock.model'
+import model from '../models/stock.model'
 
 class StockService {
     constructor() {
@@ -11,7 +11,7 @@ class StockService {
     }
 
     getAllSymbols() {
-        return StockModel.symbols
+        return model.symbols
     }
 }
 

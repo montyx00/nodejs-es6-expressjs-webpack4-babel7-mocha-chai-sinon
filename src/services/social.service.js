@@ -1,6 +1,6 @@
 import ServiceConfigs from '../config/services.config'
 import LoremIpsumGenerator from '../config/loremIpsum.config'
-import SocialModel from '../models/social.model'
+import model from '../models/social.model'
 
 export default class SocialService {
     constructor() {
@@ -18,6 +18,6 @@ export default class SocialService {
     }
 
     getAll() {
-        return SocialModel.medias
+        return model.medias
     }
 }
