@@ -23,21 +23,17 @@ export default class AlgorithmService {
     
 
     getPostCountsForDays(media, days, algorithm) {
-        let range = []
-        for(let i = 0; i < days; ++i) {
-            let count = Math.floor(Math.random() * 1000)
-            let price = Math.floor(Math.random() * 50000)
-            let date = moment().add(0-i, 'day')
-            let recommendation = model.recommendationAlgorithm(count, price, this.get(algorithm))
+        let count = Math.floor(Math.random() * 1000)
+        let price = Math.floor(Math.random() * 50000)
+        let date = moment().add(0-days, 'day')
+        let recommendation = model.recommendationAlgorithm(count, price, this.get(algorithm))
 
-            let day = {
-                count: count,
-                price: price,
-                date: date,
-                recommendation: recommendation
-            }
-            range.push(day)
+        let day = {
+            count: count,
+            price: price,
+            date: date,
+            recommendation: recommendation
         }
-        return range
+        return day
     }
 }

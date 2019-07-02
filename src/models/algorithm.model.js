@@ -20,7 +20,7 @@ let AlgorithmModel = {
         },
         {
             id: 'algorithm03',
-            name: 'Algorithm 2',
+            name: 'Algorithm 3',
             description: 'Pessimistic algorithm',
             minCount: 300,
             maxCount: 500,

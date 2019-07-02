@@ -27,6 +27,9 @@ router
     .get('/stock/symbols/getall', (req, res) => {
         res.send(stock.getAllSymbols())
     })
+    .get('/algorithm/getall', (req, res) => {
+        res.send(algo.getAll())
+    })
     .get('/algorithm/getrangedata', (req, res) => {
         if(req.query.media && req.query.days && req.query.algorithm) {
             res.send(algo.getPostCountsForDays(req.query.media, req.query.days, req.query.algorithm))
