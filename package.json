@@ -41,7 +41,7 @@
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
     "lodash": "^4.17.11",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "mocha-es6": "^0.5.6",
     "node-libs-browser": "^2.2.1",
     "nodemon": "^1.19.1",
